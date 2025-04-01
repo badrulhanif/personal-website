@@ -18,9 +18,9 @@ export default function Home() {
       <div className="flex flex-col gap-8 w-full md:w-lg">
         <header className="flex flex-col gap-2 px-6">
           <h1 className="text-4xl font-semibold text-gray-800">
-            Hey, I'm a Designer!
+            Hey, I&apos;m a Designer!
           </h1>
-          <p className=" text-md font-medium text-orange-500">
+          <p className="text-md font-medium text-orange-500">
             + I do code sometimes
           </p>
         </header>
