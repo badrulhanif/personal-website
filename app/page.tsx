@@ -44,7 +44,6 @@ export default function Home() {
 
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory">
               {imageFiles.map((filename, index) => {
-                const totalImages = imageFiles.length; // Total number of images
                 return (
                   <div
                     key={index}
@@ -55,7 +54,7 @@ export default function Home() {
                         src={`/Images/${filename}`}
                         width={360}
                         height={250}
-                        className="w-full h-64 object-cover rounded-2xl"
+                        className="w-full h-48 md:h-64 object-cover rounded-2xl"
                         alt={`Example of my work ${index + 1}`}
                         priority={index === 0}
                       />
