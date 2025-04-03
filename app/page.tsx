@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Dribbble, GitHub, Link, Linkedin } from "react-feather";
+import { Dribbble, GitHub, Linkedin } from "react-feather";
 
 export default function Home() {
   const [imageFiles, setImageFiles] = useState<string[]>([]);
@@ -30,7 +30,7 @@ export default function Home() {
     <div className="items-center justify-items-center p-6 md:p-12 h-full md:h-screen">
       <div className="flex flex-col gap-8 w-full md:w-lg">
         <header className="flex flex-col gap-2 px-6">
-          <h1 className="text-4xl font-semibold text-gray-800">
+          <h1 className="text-4xl font-semibold text-gray-700">
             Hey, I&apos;m a Designer!
           </h1>
           <p className="text-md font-medium text-orange-500">
@@ -39,7 +39,7 @@ export default function Home() {
         </header>
         <main className="flex flex-col border-1 border-gray-200 p-6 gap-12 rounded-3xl shadow-xl">
           <div className="flex flex-col gap-4">
-            <p className="text-md font-semibold text-gray-600">
+            <p className="text-md font-semibold text-gray-700">
               WHAT I CONTRIBUTE PREVIOUSLY
             </p>
 
@@ -63,7 +63,7 @@ export default function Home() {
               <p className="text-md font-medium text-gray-600">
                 I can help you
               </p>
-              <p className="text-xl font-semibold text-gray-800">
+              <p className="text-xl font-semibold text-gray-700">
                 Design & build solutions that work
               </p>
             </div>
@@ -72,14 +72,14 @@ export default function Home() {
                 What makes me different?
               </p>
               <div className="flex flex-col gap-8">
-                <p className="text-xl font-semibold text-gray-800">
+                <p className="text-xl font-semibold text-gray-700">
                   Design that convert up to 30% of the readers
                 </p>
 
-                <p className="text-xl font-semibold text-gray-800">
+                <p className="text-xl font-semibold text-gray-700">
                   Make your business easy to find by more than 1000+ local users
                 </p>
-                <p className="text-xl font-semibold text-gray-800">
+                <p className="text-xl font-semibold text-gray-700">
                   Build that scale effortlessly on any device
                 </p>
               </div>
