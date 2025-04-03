@@ -5,7 +5,6 @@ import { Dribbble, GitHub, Linkedin } from "react-feather";
 
 export default function Home() {
   const [imageFiles, setImageFiles] = useState<string[]>([]);
-
   useEffect(() => {
     fetch("/api/images")
       .then((res) => res.json())
@@ -44,18 +43,26 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory">
-              {imageFiles.map((filename, index) => (
-                <div key={index} className="w-full flex-shrink-0 snap-center">
-                  <Image
-                    src={`/Images/${filename}`}
-                    width={360}
-                    height={250}
-                    className="w-full h-64 object-cover rounded-2xl"
-                    alt={`Example of my work ${index + 1}`}
-                    priority={index === 0}
-                  />
-                </div>
-              ))}
+              {imageFiles.map((filename, index) => {
+                const totalImages = imageFiles.length; // Total number of images
+                return (
+                  <div
+                    key={index}
+                    className="w-full flex-shrink-0 snap-center relative"
+                  >
+                    <div className="relative">
+                      <Image
+                        src={`/Images/${filename}`}
+                        width={360}
+                        height={250}
+                        className="w-full h-64 object-cover rounded-2xl"
+                        alt={`Example of my work ${index + 1}`}
+                        priority={index === 0}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className="flex flex-col gap-8">
