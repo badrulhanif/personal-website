@@ -81,22 +81,17 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-8">
                 <p className="text-xl font-semibold text-gray-600">
-                  Design that{" "}
-                  <span className="text-orange-500">convert up to 30%</span> of
-                  the readers
+                  Design that <span className="">convert up to 30%</span> of the
+                  readers
                 </p>
 
                 <p className="text-xl font-semibold text-gray-600">
                   Make your business easy to{" "}
-                  <span className="text-orange-500">
-                    find by more than 1000+
-                  </span>{" "}
-                  local users
+                  <span className="">find by more than 1000+</span> local users
                 </p>
                 <p className="text-xl font-semibold text-gray-600">
-                  Build that{" "}
-                  <span className="text-orange-500">scale effortlessly</span> on
-                  any device
+                  Build that <span className="">scale effortlessly</span> on any
+                  device
                 </p>
               </div>
             </div>
@@ -120,6 +115,7 @@ export default function Home() {
                           src={`/Images/${filename}`}
                           width={0}
                           height={24}
+                          layout="intrinsic"
                           className="w-auto h-5 object-cover "
                           alt={`Example of my work ${index + 1}`}
                           priority={index === 0}
