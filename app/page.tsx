@@ -110,7 +110,7 @@ export default function Home() {
                       <div className="relative">
                         <Image
                           src={`/Images/${filename}`}
-                          width={24}
+                          width={0}
                           height={24}
                           className="w-fit h-5 object-cover "
                           alt={`Example of my work ${index + 1}`}
