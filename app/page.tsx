@@ -36,7 +36,7 @@ export default function Home() {
             + I do code sometimes
           </p>
         </header>
-        <main className="flex flex-col border-1 border-gray-200 p-6 gap-12 rounded-3xl shadow-xl">
+        <main className="flex flex-col border-1 border-gray-200 p-6 gap-8 rounded-3xl shadow-xl">
           <div className="flex flex-col gap-4">
             <p className="text-md font-semibold text-gray-700">
               WHAT I CONTRIBUTE PREVIOUSLY
