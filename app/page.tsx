@@ -26,11 +26,11 @@ export default function Home() {
   }
 
   return (
-    <div className="items-center justify-items-center p-6 md:p-12 h-full md:h-screen">
+    <div className="items-center justify-items-center p-6 md:p-12 h-full md:h-full">
       <div className="flex flex-col gap-8 w-full md:w-lg">
         <header className="flex flex-col gap-2 px-6">
           <h1 className="text-4xl font-semibold text-gray-700">
-            Hey, I&apos;m a Designer!
+            UI/UX Designer
           </h1>
           <p className="text-md font-medium text-orange-500">
             + I do code sometimes
@@ -43,25 +43,27 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory">
-              {imageFiles.map((filename, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="w-full flex-shrink-0 snap-center relative"
-                  >
-                    <div className="relative">
-                      <Image
-                        src={`/Images/${filename}`}
-                        width={360}
-                        height={250}
-                        className="w-full h-48 md:h-64 object-cover rounded-2xl"
-                        alt={`Example of my work ${index + 1}`}
-                        priority={index === 0}
-                      />
+              {imageFiles
+                .filter((filename) => filename.startsWith("example-work"))
+                .map((filename, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="w-full flex-shrink-0 snap-center relative"
+                    >
+                      <div className="relative">
+                        <Image
+                          src={`/Images/${filename}`}
+                          width={360}
+                          height={250}
+                          className="w-full h-48 md:h-64 object-cover rounded-2xl"
+                          alt={`Example of my work ${index + 1}`}
+                          priority={index === 0}
+                        />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           </div>
           <div className="flex flex-col gap-8">
@@ -90,6 +92,35 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            <div className="flex flex-col gap-2">
+              <p className="text-md font-medium text-gray-600">Clients</p>
+              <p className="text-xl font-semibold text-gray-700">
+                Help fast-paced startups and visionaries accelerate growth
+              </p>
+            </div>
+            <div className="flex flex-row gap-8 ">
+              {imageFiles
+                .filter((filename) => filename.includes("logo"))
+                .map((filename, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="w-fit flex-shrink-0 snap-center relative "
+                    >
+                      <div className="relative">
+                        <Image
+                          src={`/Images/${filename}`}
+                          width={24}
+                          height={24}
+                          className="w-fit h-5 object-cover "
+                          alt={`Example of my work ${index + 1}`}
+                          priority={index === 0}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         </main>
         <footer className="flex flex-col md:flex-row gap-8 items-center justify-between">
@@ -104,7 +135,7 @@ export default function Home() {
               href="https://dribbble.com/badrulhanif"
               target="blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white p-2 rounded-full border-gray-200 hover:bg-pink-400"
+              className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-pink-400"
             >
               <Dribbble className="stroke-[1.5] " />
             </a>
@@ -112,7 +143,7 @@ export default function Home() {
               href="https://github.com/badrulhanif"
               target="blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white p-2 rounded-full border-gray-200 hover:bg-black"
+              className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-black"
             >
               <GitHub className="stroke-[1.5]" />
             </a>
@@ -120,7 +151,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/badrul-hanif-b01471196/"
               target="blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white p-2 rounded-full border-gray-200 hover:bg-blue-400"
+              className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-blue-400"
             >
               <Linkedin className="stroke-[1.5]" />
             </a>

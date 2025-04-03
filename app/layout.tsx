@@ -20,8 +20,10 @@ export const metadata: Metadata = {
     "Badrul Hanif",
     "UI/UX Design",
     "Branding",
+    "Marketing",
     "Web Design",
-    "Content Creation",
+    "Web Development",
+    "Mobile App Design",
     "E-commerce Solutions",
   ],
 };
