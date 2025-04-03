@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Dribbble, GitHub, Linkedin } from "react-feather";
+import { Dribbble, GitHub, Link, Linkedin } from "react-feather";
 
 export default function Home() {
   const [imageFiles, setImageFiles] = useState<string[]>([]);
@@ -12,6 +12,19 @@ export default function Home() {
       .then((data) => setImageFiles(data))
       .catch((err) => console.error("Error fetching images:", err));
   }, []);
+
+  function handleMailTo() {
+    const email = "hanifbaharuddin@gmail.com";
+    const subject = "Subject goes here";
+    const body = "Body text goes here";
+
+    // Gmail specific URL structure
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailUrl);
+  }
 
   return (
     <div className="items-center justify-items-center p-6 md:p-12 h-full md:h-screen">
@@ -74,7 +87,10 @@ export default function Home() {
           </div>
         </main>
         <footer className="flex flex-col md:flex-row gap-8 items-center justify-between">
-          <button className="font-medium text-white hover:text-orange-500 px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-orange-500 hover:bg-orange-200 ">
+          <button
+            onClick={handleMailTo}
+            className="font-medium text-white hover:text-orange-500 px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-orange-500 hover:bg-orange-200 "
+          >
             Collaborate with me
           </button>
           <div className="flex flex-row gap-8 md:gap-2">
