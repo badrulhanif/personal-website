@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Badrul Hanif",
   description:
-    "Creative Strategist helping brands craft engaging digital experiences.",
+    "Creative strategist helping brands craft engaging digital experiences.",
   keywords: [
     "Badrul Hanif",
     "UI/UX Design",
