@@ -113,14 +113,14 @@ export default function Home() {
                   return (
                     <div
                       key={index}
-                      className="w-fit flex-shrink-0 snap-center relative "
+                      className="w-auto flex-shrink-0 snap-center relative "
                     >
                       <div className="relative">
                         <Image
                           src={`/Images/${filename}`}
                           width={0}
                           height={24}
-                          className="w-fit h-5 object-cover "
+                          className="w-auto h-5 object-cover "
                           alt={`Example of my work ${index + 1}`}
                           priority={index === 0}
                         />
