@@ -81,14 +81,22 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-8">
                 <p className="text-xl font-semibold text-gray-600">
-                  Design that convert up to 30% of the readers
+                  Design that{" "}
+                  <span className="text-orange-500">convert up to 30%</span> of
+                  the readers
                 </p>
 
                 <p className="text-xl font-semibold text-gray-600">
-                  Make your business easy to find by more than 1000+ local users
+                  Make your business easy to{" "}
+                  <span className="text-orange-500">
+                    find by more than 1000+
+                  </span>{" "}
+                  local users
                 </p>
                 <p className="text-xl font-semibold text-gray-600">
-                  Build that scale effortlessly on any device
+                  Build that{" "}
+                  <span className="text-orange-500">scale effortlessly</span> on
+                  any device
                 </p>
               </div>
             </div>
