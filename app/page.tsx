@@ -115,7 +115,6 @@ export default function Home() {
                           src={`/Images/${filename}`}
                           width={0}
                           height={24}
-                          layout="intrinsic"
                           className="w-auto h-5 object-cover "
                           alt={`Example of my work ${index + 1}`}
                           priority={index === 0}
