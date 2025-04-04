@@ -13,16 +13,7 @@ export default function Home() {
   }, []);
 
   function handleMailTo() {
-    const email = "hanifbaharuddin@gmail.com";
-    const subject = "Subject goes here";
-    const body = "Body text goes here";
-
-    // Gmail specific URL structure
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.open(gmailUrl);
+    window.open("mailto:hanifbaharuddin@gmail.com", "_blank");
   }
 
   return (
