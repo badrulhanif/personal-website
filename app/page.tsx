@@ -122,7 +122,7 @@ export default function Home() {
             onClick={handleMailTo}
             className="font-medium text-white hover:text-orange-500 px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-orange-500 hover:bg-orange-200 "
           >
-            Collaborate with me
+            Collaborate with me me
           </button>
           <div className="flex flex-row gap-8 md:gap-2">
             <a
