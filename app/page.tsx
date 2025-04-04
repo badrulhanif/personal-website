@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Dribbble, GitHub, Linkedin } from "react-feather";
+import { Dribbble, GitHub, Linkedin, Mail } from "react-feather";
 
 export default function Home() {
   const [imageFiles, setImageFiles] = useState<string[]>([]);
+  const [copied, setCopied] = useState(false);
+
   useEffect(() => {
     fetch("/api/images")
       .then((res) => res.json())
@@ -14,6 +16,13 @@ export default function Home() {
 
   function handleMailTo() {
     window.open("mailto:hanifbaharuddin@gmail.com", "_blank");
+  }
+
+  function handleCopyEmail() {
+    navigator.clipboard.writeText("hanifbaharuddin@gmail.com").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    });
   }
 
   return (
@@ -125,6 +134,26 @@ export default function Home() {
             Collaborate with me
           </button>
           <div className="flex flex-row gap-8 md:gap-2">
+            <a
+              onClick={handleCopyEmail}
+              className="relative inline-block text-gray-400 hover:text-white p-2 rounded-full hover:bg-black group" // Added `group` class here
+            >
+              <Mail className="stroke-[1.5]" />
+
+              {/* Show Email on Hover (only visible when not copied) */}
+              {!copied && (
+                <span className="absolute -top-12 left-1/2 -translate-x-1/2 text-center p-2 w-52 rounded-full text-sm text-white bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  hanifbaharuddin@gmail.com
+                </span>
+              )}
+
+              {/* Show 'Copied to clipboard!' on Click */}
+              {copied && (
+                <span className="absolute -top-12 left-1/2 -translate-x-1/2 text-center p-2 w-40 rounded-full text-sm text-white bg-black/50 opacity-100 transition-opacity duration-300">
+                  Copied to clipboard!
+                </span>
+              )}
+            </a>
             <a
               href="https://dribbble.com/badrulhanif"
               target="blank"
