@@ -10,7 +10,13 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/images")
       .then((res) => res.json())
-      .then((data) => setImageFiles(data))
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setImageFiles(data);
+        } else {
+          console.error("Invalid data format", data);
+        }
+      })
       .catch((err) => console.error("Error fetching images:", err));
   }, []);
 
