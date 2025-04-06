@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "Badrul Hanif",
     images: [
       {
-        url: "/images/banner.png",
+        url: "https://badrulhanif.com/images/banner.png",
         width: 1200,
         height: 630,
         alt: "Badrul Hanif",
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     title: "Badrul Hanif",
     description:
       "Creative strategist helping brands craft engaging digital experiences.",
-    images: ["/images/banner.png"],
-    creator: "@yourhandle",
+    images: ["https://badrulhanif.com/images/banner.png"],
+    creator: "@bbadrulhanif",
   },
 };
 
