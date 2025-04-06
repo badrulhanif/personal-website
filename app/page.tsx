@@ -38,7 +38,7 @@ export default function Home() {
         </header>
         <main className="flex flex-col border-1 border-gray-200 p-6 gap-8 rounded-3xl shadow-xl bg-white">
           <div className="flex flex-col gap-4">
-            <p className="text-md font-semibold text-gray-800">
+            <p className="text-md font-semibold text-gray-600">
               WHAT I CONTRIBUTE PREVIOUSLY
             </p>
 
