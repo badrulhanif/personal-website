@@ -10,13 +10,7 @@ export default function Home() {
   useEffect(() => {
     fetch("/api/images")
       .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setImageFiles(data);
-        } else {
-          console.error("Invalid data format", data);
-        }
-      })
+      .then((data) => setImageFiles(data))
       .catch((err) => console.error("Error fetching images:", err));
   }, []);
 
@@ -59,7 +53,7 @@ export default function Home() {
                     >
                       <div className="relative">
                         <Image
-                          src={`/images/${filename}`}
+                          src={`/Images/${filename}`}
                           width={360}
                           height={250}
                           className="w-full h-48 md:h-64 object-cover rounded-2xl"
@@ -118,7 +112,7 @@ export default function Home() {
                     >
                       <div className="relative">
                         <Image
-                          src={`/images/${filename}`}
+                          src={`/Images/${filename}`}
                           width={0}
                           height={24}
                           className="w-auto h-5 object-cover "

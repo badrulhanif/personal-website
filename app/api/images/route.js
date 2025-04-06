@@ -3,7 +3,7 @@ import path from "path";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const imagesDirectory = path.join(process.cwd(), "public/images");
+  const imagesDirectory = path.join(process.cwd(), "public/Images");
   try {
     const filenames = await fs.readdir(imagesDirectory); // Read filenames in the images folder
     return NextResponse.json(filenames); // Send filenames as JSON
