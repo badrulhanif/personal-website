@@ -32,7 +32,7 @@ export default function Home() {
           <h1 className="text-4xl font-semibold text-gray-600">
             UI/UX Designer
           </h1>
-          <p className="text-md font-medium text-orange-500">
+          <p className="text-md font-medium text-indigo-500">
             + I do code sometimes
           </p>
         </header>
@@ -129,7 +129,7 @@ export default function Home() {
         <footer className="flex flex-col md:flex-row gap-8 items-center justify-between">
           <button
             onClick={handleMailTo}
-            className="font-medium text-white hover:text-orange-500 px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-orange-500 hover:bg-orange-200 "
+            className="font-medium text-white hover:text-indigo-500 px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-indigo-500 hover:bg-indigo-200 "
           >
             Collaborate with me
           </button>
