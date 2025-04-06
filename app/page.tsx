@@ -26,19 +26,19 @@ export default function Home() {
   }
 
   return (
-    <div className="items-center justify-items-center p-6 md:p-12 h-full md:h-full">
+    <div className="items-center justify-items-center p-6 md:p-12 h-full md:h-full bg-[url(/images/background.png)] bg-center bg-cover">
       <div className="flex flex-col gap-8 w-full md:w-lg">
         <header className="flex flex-col gap-2 px-6">
-          <h1 className="text-4xl font-semibold text-gray-600">
+          <h1 className="text-4xl font-semibold text-gray-700">
             UI/UX Designer
           </h1>
-          <p className="text-md font-medium text-indigo-500">
+          <p className="text-md font-medium text-indigo-600">
             + I do code sometimes
           </p>
         </header>
-        <main className="flex flex-col border-1 border-gray-200 p-6 gap-8 rounded-3xl shadow-xl">
+        <main className="flex flex-col border-1 border-gray-200 p-6 gap-8 rounded-3xl shadow-xl bg-white">
           <div className="flex flex-col gap-4">
-            <p className="text-md font-semibold text-gray-600">
+            <p className="text-md font-semibold text-gray-800">
               WHAT I CONTRIBUTE PREVIOUSLY
             </p>
 
@@ -129,14 +129,14 @@ export default function Home() {
         <footer className="flex flex-col md:flex-row gap-8 items-center justify-between">
           <button
             onClick={handleMailTo}
-            className="font-medium text-white hover:text-indigo-500 px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-indigo-500 hover:bg-indigo-200 "
+            className="font-medium text-white  px-5 py-3 w-full md:w-fit cursor-pointer rounded-full bg-indigo-500 hover:bg-indigo-800 "
           >
             Collaborate with me
           </button>
           <div className="flex flex-row gap-8 md:gap-2">
             <a
               onClick={handleCopyEmail}
-              className="relative inline-block text-gray-400 hover:text-white p-2 rounded-full hover:bg-black group" // Added `group` class here
+              className="relative inline-block text-gray-500 hover:text-white p-2 rounded-full hover:bg-black group" // Added `group` class here
             >
               <Mail className="stroke-[1.5]" />
 
@@ -158,7 +158,7 @@ export default function Home() {
               href="https://dribbble.com/badrulhanif"
               target="blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-pink-400"
+              className="text-gray-500 hover:text-white p-2 rounded-full hover:bg-pink-400"
             >
               <Dribbble className="stroke-[1.5] " />
             </a>
@@ -166,7 +166,7 @@ export default function Home() {
               href="https://github.com/badrulhanif"
               target="blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-black"
+              className="text-gray-500 hover:text-white p-2 rounded-full hover:bg-black"
             >
               <GitHub className="stroke-[1.5]" />
             </a>
@@ -174,7 +174,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/badrul-hanif-b01471196/"
               target="blank"
               rel="noreferrer"
-              className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-blue-400"
+              className="text-gray-500 hover:text-white p-2 rounded-full hover:bg-blue-400"
             >
               <Linkedin className="stroke-[1.5]" />
             </a>
