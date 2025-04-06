@@ -3,9 +3,9 @@ import path from "path";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const imagesDirectory = path.join(process.cwd(), "public/Images");
+  const imagesDirectory = path.join(process.cwd(), "public/images");
   try {
-    const filenames = await fs.readdir(imagesDirectory); // Read filenames in the Images folder
+    const filenames = await fs.readdir(imagesDirectory); // Read filenames in the images folder
     return NextResponse.json(filenames); // Send filenames as JSON
   } catch (error) {
     console.error("Error reading images directory:", error);
