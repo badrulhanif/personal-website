@@ -5,7 +5,30 @@ import { Dribbble, GitHub, Linkedin } from "react-feather";
 
 export default function Home() {
   const [imageFiles, setImageFiles] = useState<string[]>([]);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [emailError, setEmailError] = useState("");
   // const [copied, setCopied] = useState(false);
+
+  const validateEmail = (value: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    // Validate format here
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      setEmailError("Invalid email format");
+    } else {
+      setEmailError(""); // Clear error if valid
+    }
+  };
 
   useEffect(() => {
     fetch("/api/images")
@@ -14,8 +37,37 @@ export default function Home() {
       .catch((err) => console.error("Error fetching images:", err));
   }, []);
 
-  function handleMailTo() {
-    window.open("mailto:hanifbaharuddin@gmail.com", "_blank");
+  async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, message }),
+      });
+
+      if (!res.ok) {
+        const text = await res.text(); // get raw response
+        console.error("Server error:", text); // log it
+        throw new Error("Server responded with an error");
+      }
+
+      const result = await res.json();
+      if (result.success) {
+        setSent(true);
+        setEmail("");
+        setMessage("");
+      } else {
+        alert("Something went wrong.");
+      }
+    } catch (error) {
+      alert("Failed to send. Please try again later.");
+      console.error(error);
+    }
+
+    setSending(false);
   }
 
   // function handleCopyEmail() {
@@ -26,7 +78,7 @@ export default function Home() {
   // }
 
   return (
-    <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/Images/background.png)] bg-center bg-cover">
+    <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/Images/background.png)] bg-center bg-no-repeat bg-fixed">
       <div className="flex flex-col gap-8 w-full md:w-lg">
         <header className="flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex flex-col gap-2 px-6 items-center md:items-start">
@@ -37,12 +89,12 @@ export default function Home() {
               + I do code sometimes
             </p>
           </div>
-          <div className="flex flex-row gap-2 px-6 w-full md:w-fit justify-between">
+          <div className="flex flex-row gap-2 px-6 w-fit">
             <a
               href="https://dribbble.com/badrulhanif"
               target="blank"
               rel="noreferrer"
-              className="text-gray-500 hover:text-white p-2 rounded-full hover:bg-pink-400"
+              className="text-gray-600 hover:text-white p-2 rounded-full hover:bg-pink-400"
             >
               <Dribbble className="stroke-[1.5] " />
             </a>
@@ -50,7 +102,7 @@ export default function Home() {
               href="https://github.com/badrulhanif"
               target="blank"
               rel="noreferrer"
-              className="text-gray-500 hover:text-white p-2 rounded-full hover:bg-black"
+              className="text-gray-600 hover:text-white p-2 rounded-full hover:bg-black"
             >
               <GitHub className="stroke-[1.5]" />
             </a>
@@ -58,7 +110,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/badrul-hanif-b01471196/"
               target="blank"
               rel="noreferrer"
-              className="text-gray-500 hover:text-white p-2 rounded-full hover:bg-blue-400"
+              className="text-gray-600 hover:text-white p-2 rounded-full hover:bg-blue-400"
             >
               <Linkedin className="stroke-[1.5]" />
             </a>
@@ -158,7 +210,7 @@ export default function Home() {
           <p className="text-md font-semibold text-gray-600">
             COLLABORATE WITH ME
           </p>
-          <form onSubmit={handleMailTo} className="flex flex-col gap-8">
+          <form onSubmit={handleFormSubmit} className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="email"
@@ -168,21 +220,28 @@ export default function Home() {
               </label>
               <input
                 type="email"
-                name="email"
                 id="email"
+                value={email}
+                onChange={handleEmailChange}
                 placeholder="example@example.com"
                 required
                 className="text-md font-medium text-gray-400 border-1 border-gray-200 p-3 rounded-xl "
               />
+              {emailError && (
+                <span className="text-sm text-red-500">{emailError}</span>
+              )}
             </div>
             <div className="flex flex-col gap-2">
               <label
-                htmlFor="email"
+                htmlFor="message"
                 className="text-md font-medium text-gray-400"
               >
                 Messages
               </label>
               <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Your message here..."
                 required
                 className="text-md font-medium text-gray-400 border-1 border-gray-200 h-32 p-3 rounded-xl overflow-y-auto resize-none"
@@ -190,9 +249,10 @@ export default function Home() {
             </div>
             <button
               type="submit"
+              disabled={sending}
               className="font-medium text-white  px-5 py-3 w-full cursor-pointer rounded-full bg-indigo-500 hover:bg-indigo-800 "
             >
-              Let&apos;s ship this!
+              {sending ? "Sending..." : "Lets ship this!"}
             </button>
           </form>
         </footer>
