@@ -15,8 +15,14 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true, data });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error sending email:", error);
-    return NextResponse.json({ success: false, error: error.message || error });
+
+    let errorMessage = "An unknown error occurred";
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    return NextResponse.json({ success: false, error: errorMessage });
   }
 }

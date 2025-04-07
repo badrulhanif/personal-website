@@ -22,11 +22,10 @@ export default function Home() {
     setEmail(value);
 
     // Validate format here
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) {
+    if (!validateEmail(value)) {
       setEmailError("Invalid email format");
     } else {
-      setEmailError(""); // Clear error if valid
+      setEmailError("");
     }
   };
 
@@ -79,7 +78,7 @@ export default function Home() {
 
   return (
     <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/Images/background.png)] bg-center bg-no-repeat bg-fixed">
-      <div className="flex flex-col gap-8 w-full md:w-lg">
+      <div className="flex flex-col relative gap-8 w-full md:w-lg">
         <header className="flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex flex-col gap-2 px-6 items-center md:items-start">
             <h1 className="text-4xl font-semibold text-gray-700">
@@ -256,6 +255,11 @@ export default function Home() {
             </button>
           </form>
         </footer>
+        {sent && (
+          <p className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center px-4 py-2 rounded-full text-sm text-white bg-black/50">
+            Ship it successfully!
+          </p>
+        )}
       </div>
     </div>
   );
