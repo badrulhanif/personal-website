@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Dribbble, GitHub, Linkedin, Mail } from "react-feather";
+import { Dribbble, GitHub, Linkedin } from "react-feather";
 
 export default function Home() {
   const [imageFiles, setImageFiles] = useState<string[]>([]);
-  const [copied, setCopied] = useState(false);
+  // const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     fetch("/api/images")
@@ -18,12 +18,12 @@ export default function Home() {
     window.open("mailto:hanifbaharuddin@gmail.com", "_blank");
   }
 
-  function handleCopyEmail() {
-    navigator.clipboard.writeText("hanifbaharuddin@gmail.com").then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
-    });
-  }
+  // function handleCopyEmail() {
+  //   navigator.clipboard.writeText("hanifbaharuddin@gmail.com").then(() => {
+  //     setCopied(true);
+  //     setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+  //   });
+  // }
 
   return (
     <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/Images/background.png)] bg-center bg-cover">
@@ -192,7 +192,7 @@ export default function Home() {
               type="submit"
               className="font-medium text-white  px-5 py-3 w-full cursor-pointer rounded-full bg-indigo-500 hover:bg-indigo-800 "
             >
-              Let's ship this!
+              Let&apos;s ship this!
             </button>
           </form>
         </footer>
