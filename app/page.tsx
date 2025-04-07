@@ -28,8 +28,8 @@ export default function Home() {
   return (
     <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/Images/background.png)] bg-center bg-cover">
       <div className="flex flex-col gap-8 w-full md:w-lg">
-        <header className="flex flex-col md:flex-row gap-8 items-center justify-between">
-          <div className="flex flex-col gap-2 px-6">
+        <header className="flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="flex flex-col gap-2 px-6 items-center md:items-start">
             <h1 className="text-4xl font-semibold text-gray-700">
               UI/UX Designer
             </h1>
@@ -37,7 +37,7 @@ export default function Home() {
               + I do code sometimes
             </p>
           </div>
-          <div className="flex flex-row gap-8 md:gap-2">
+          <div className="flex flex-row gap-2 px-6 w-full md:w-fit justify-between">
             <a
               href="https://dribbble.com/badrulhanif"
               target="blank"
@@ -154,7 +154,7 @@ export default function Home() {
             </div>
           </div>
         </main>
-        <footer className="flex flex-col border-1 border-gray-200 p-6 gap-8 rounded-3xl shadow-xl bg-white">
+        <footer className="flex flex-col border-1 border-gray-200 p-6 gap-2 rounded-3xl shadow-xl bg-white">
           <p className="text-md font-semibold text-gray-600">
             COLLABORATE WITH ME
           </p>
