@@ -256,7 +256,7 @@ export default function Home() {
           </form>
         </footer>
         {sent && (
-          <p className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center px-4 py-2 rounded-full text-sm text-white bg-black/50 duration-300">
+          <p className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center px-4 py-2 rounded-full text-sm text-white bg-black/50 transition-opacity opacity-0 duration-300">
             Your idea has set sail 🚀
           </p>
         )}
