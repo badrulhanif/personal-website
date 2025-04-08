@@ -251,7 +251,7 @@ export default function Home() {
               disabled={sending}
               className="font-medium text-white  px-5 py-3 w-full cursor-pointer rounded-full bg-indigo-500 hover:bg-indigo-800 "
             >
-              {sending ? "Sending..." : "Lets ship this!"}
+              {sending ? "Shipping..." : "Lets ship this!"}
             </button>
           </form>
         </footer>
