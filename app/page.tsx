@@ -36,6 +36,16 @@ export default function Home() {
       .catch((err) => console.error("Error fetching images:", err));
   }, []);
 
+  useEffect(() => {
+    if (sent) {
+      const timeout = setTimeout(() => {
+        setSent(false);
+      }, 3000); // 3 seconds
+
+      return () => clearTimeout(timeout); // cleanup
+    }
+  }, [sent]);
+
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSending(true);
@@ -256,7 +266,7 @@ export default function Home() {
           </form>
         </footer>
         {sent && (
-          <p className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center px-4 py-2 rounded-full text-sm text-white bg-black/50 transition-opacity opacity-0 duration-300">
+          <p className="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-center px-4 py-2 rounded-full text-sm text-white bg-black/50">
             Your idea has set sail 🚀
           </p>
         )}
