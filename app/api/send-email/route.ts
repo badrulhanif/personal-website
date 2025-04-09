@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       subject: "Your idea has set sail 🚀",
       html: `<div style="max-width: 600px; margin: 0 auto;">
   <div style="text-align: center; margin-bottom: 24px;">
-    <img src="https://www.badrulhanif.com/Images/logo.png" alt="Logo" width="96" height="96" style="margin-bottom: 12px;" />
+    <img src="https://www.badrulhanif.com/Images/cat-icon.png" alt="Logo" width="96" height="96" style="margin-bottom: 12px;" />
     <h1 style="font-size: 24px; color: #4A4E5A; margin-bottom: 12px;">We heard you!</h1>
     <p style="font-size: 16px; color: #5B616E;">Thank you for reaching out. Your idea sounds awesome, and I'm excited about the possibility of working together!</p>
   </div>
@@ -30,8 +30,11 @@ export async function POST(request: Request) {
     <p style="font-size: 16px; color: #5B616E;">${message}</p>
   </div>
 
+  <div>
   <p style="font-size: 16px; color: #5B616E; margin-bottom: 24px;">Let’s build something great together!</p>
-  <p style="text-align: center; color: #1a73e8; text-decoration: none; display: block;">
+  </div>
+
+  <p style="font-size: 16px; text-align: center; color: #1a73e8; text-decoration: none; display: block;">
     <a href="https://dribbble.com/badrulhanif">Dribbble</a>
     <a href="https://github.com/badrulhanif">GitHub</a>
     <a href="https://www.linkedin.com/in/badrul-hanif-b01471196/">LinkedIn</a>
