@@ -234,7 +234,7 @@ export default function Home() {
                 onChange={handleEmailChange}
                 placeholder="example@example.com"
                 required
-                className="text-md font-medium text-gray-400 border-1 border-gray-200 p-3 rounded-xl "
+                className={`text-md font-medium ${email ? `text-gray-600` : `text-gray-400`} border-1 border-gray-200 p-3 rounded-xl`}
               />
               {emailError && (
                 <span className="text-sm text-red-500">{emailError}</span>
@@ -253,7 +253,7 @@ export default function Home() {
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Your message here..."
                 required
-                className="text-md font-medium text-gray-400 border-1 border-gray-200 h-32 p-3 rounded-xl overflow-y-auto resize-none"
+                className={`text-md font-medium ${message ? `text-gray-600` : `text-gray-400`} border-1 border-gray-200 h-32 p-3 rounded-xl overflow-y-auto resize-none`}
               />
             </div>
             <button
