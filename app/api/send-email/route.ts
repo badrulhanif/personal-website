@@ -30,14 +30,12 @@ export async function POST(request: Request) {
     <p style="font-size: 16px; color: #5B616E;">${message}</p>
   </div>
 
-  <div>
   <p style="font-size: 16px; color: #5B616E; margin-bottom: 24px;">Let’s build something great together!</p>
-  </div>
-
+  
   <p style="font-size: 16px; text-align: center; color: #1a73e8; text-decoration: none; display: block;">
-    <a href="https://dribbble.com/badrulhanif">Dribbble</a>
-    <a href="https://github.com/badrulhanif">GitHub</a>
-    <a href="https://www.linkedin.com/in/badrul-hanif-b01471196/">LinkedIn</a>
+    <a href="https://dribbble.com/badrulhanif" style="margin: 0 10px;">Dribbble</a>
+    <a href="https://github.com/badrulhanif" style="margin: 0 10px;">GitHub</a>
+    <a href="https://www.linkedin.com/in/badrul-hanif-b01471196/" style="margin: 0 10px;">LinkedIn</a>
   </p>
   </div>
 `,
