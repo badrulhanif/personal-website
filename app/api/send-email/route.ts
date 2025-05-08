@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       subject: "New Collaboration Request",
       html: `<div style="max-width: 600px; margin: 0 auto;">
   <div style="text-align: center; margin-bottom: 24px;">
-    <img src="https://www.badrulhanif.com/Images/cat-icon.png" alt="Logo" width="96" height="96" style="margin-bottom: 12px;" />
+    <img src="https://www.badrulhanif.com/assets/cat-icon.png" alt="Logo" width="96" height="96" style="margin-bottom: 12px;" />
     <h1 style="font-size: 24px; color: #4A4E5A; margin-bottom: 12px;">Hey Badrul!</h1>
     <p style="font-size: 16px; color: #5B616E;">Someone has request to collaborate with you</p>
   </div>
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       subject: "Your idea has set sail 🚀",
       html: `<div style="max-width: 600px; margin: 0 auto;">
   <div style="text-align: center; margin-bottom: 24px;">
-    <img src="https://www.badrulhanif.com/Images/cat-icon.png" alt="Logo" width="96" height="96" style="margin-bottom: 12px;" />
+    <img src="https://www.badrulhanif.com/assets/cat-icon.png" alt="Logo" width="96" height="96" style="margin-bottom: 12px;" />
     <h1 style="font-size: 24px; color: #4A4E5A; margin-bottom: 12px;">We heard you!</h1>
     <p style="font-size: 16px; color: #5B616E;">Thank you for reaching out. Your idea sounds awesome, and I'm excited about the possibility of working together!</p>
   </div>

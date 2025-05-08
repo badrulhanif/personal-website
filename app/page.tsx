@@ -87,7 +87,7 @@ export default function Home() {
   // }
 
   return (
-    <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/Images/background.png)] bg-center bg-no-repeat bg-fixed">
+    <div className="items-center justify-items-center px-6 py-12 md:p-14 h-full md:h-full bg-[url(/assets/background.png)] bg-center bg-no-repeat bg-fixed">
       <div className="flex flex-col relative gap-8 w-full md:w-lg">
         <header className="flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex flex-col gap-2 px-6 items-center md:items-start">
@@ -142,7 +142,7 @@ export default function Home() {
                     >
                       <div className="relative">
                         <Image
-                          src={`/Images/${filename}`}
+                          src={`/assets/${filename}`}
                           width={360}
                           height={250}
                           className="w-full h-48 md:h-64 object-cover rounded-2xl"
@@ -201,7 +201,7 @@ export default function Home() {
                     >
                       <div className="relative">
                         <Image
-                          src={`/Images/${filename}`}
+                          src={`/assets/${filename}`}
                           width={0}
                           height={24}
                           className="w-auto h-5 object-cover "
